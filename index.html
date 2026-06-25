@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PNM Governance Dashboard</title>
-    <!-- Tailwind CSS Engine -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Chart.js Engine -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-[#0f141c] text-slate-200 font-sans antialiased min-h-screen">
 
-    <!-- MINIMALIST HEADER -->
     <header class="border-b border-slate-800 bg-[#131924] px-8 py-4 sticky top-0 z-50">
         <div class="max-w-[1500px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div class="flex items-center gap-3">
@@ -24,7 +21,7 @@
             <div class="flex flex-wrap items-center gap-6 text-xs text-slate-400">
                 <div class="border-l sm:border-l-0 sm:border-r border-slate-800 pl-3 sm:pl-0 sm:pr-6">
                     <p class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Developer & Architect</p>
-                    <p class="font-medium text-slate-300">Mohd Khairul Ridhuan</p>
+                    <p class="font-medium text-slate-300">Mohd Khairul Ridhuan bin Mohd Fadzil</p>
                 </div>
                 <div>
                     <p class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">System Timestamp</p>
@@ -34,10 +31,8 @@
         </div>
     </header>
 
-    <!-- MAIN DASHBOARD CONTAINER -->
     <main class="max-w-[1500px] mx-auto p-6 lg:p-8 space-y-8">
 
-        <!-- CORE KPI METRICS -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm">
                 <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">u-Pustaka Live Access</p>
@@ -56,10 +51,8 @@
             </div>
         </section>
 
-        <!-- DATA VISUALIZATION AREA & AI CO-RESEARCHER CHATBOX -->
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <!-- Primary Macro Chart (Takes 2 Columns) -->
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm h-[380px] flex flex-col justify-between">
                     <div class="mb-4">
@@ -71,7 +64,6 @@
                     </div>
                 </div>
 
-                <!-- STRATEGIC PILLAR SELECTION (Sleek layout) -->
                 <div>
                     <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-3">Strategic Pillars Selection</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -91,41 +83,36 @@
                 </div>
             </div>
 
-            <!-- INTEGRATED AI CO-RESEARCHER CHATBOX Terminal (Takes 1 Column) -->
             <div class="bg-[#131924] border border-slate-800/80 rounded-xl shadow-xl flex flex-col h-[485px] overflow-hidden">
-                <!-- Chat Header -->
                 <div class="p-4 border-b border-slate-800 bg-[#171e2b] flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <div class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
-                        <span class="text-xs font-bold tracking-wider text-white uppercase">AI Co-Researcher Node</span>
+                        <span class="text-xs font-bold tracking-wider text-white uppercase">Ali Co-Researcher Terminal</span>
                     </div>
-                    <span class="text-[9px] text-slate-500 font-mono">PNM-Core v1.0</span>
+                    <span class="text-[9px] text-slate-500 font-mono">Ali-Node v1.2</span>
                 </div>
                 
-                <!-- Chat Messages Screen -->
                 <div id="chat-screen" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs scrollbar-thin scrollbar-thumb-slate-800">
                     <div class="bg-slate-800/40 border border-slate-800 p-2.5 rounded-lg text-slate-300 leading-relaxed">
-                        <strong class="text-cyan-400">System Core:</strong> Salam, saya AI Co-Researcher Khairul. Saya ditugaskan khas untuk menerangkan impak, data, dan model analitik bagi projek <strong>Perpustakaan Negara Malaysia Governance Terminal</strong> ini. Sila pilih atau taip soalan anda.
+                        <strong class="text-cyan-400">Ali:</strong> Salam & Hello! I am <strong>Ali</strong>, your dedicated AI Co-Researcher for this project. I monitor real-time library analytics and institutional governance data. You can chat with me in <strong>Malay</strong> or <strong>English</strong>!
                     </div>
                 </div>
 
-                <!-- Fast Suggestion Tags -->
                 <div class="p-2 bg-[#0f141c]/50 border-t border-slate-800/60 flex gap-1.5 overflow-x-auto text-[10px]">
-                    <button onclick="sendQuickQuery('Ceritakan tentang Pillar I')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Pillar I Info</button>
-                    <button onclick="sendQuickQuery('Apa itu Pen-Advisors?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">AI Infrastructure</button>
-                    <button onclick="sendQuickQuery('Boleh masak nasi lemak?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Uji Sempadan AI</button>
+                    <button onclick="sendQuickQuery('Siapa designer projek ni?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Designer Profile</button>
+                    <button onclick="sendQuickQuery('Give me real-time statistics')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Real-Time Stats (EN)</button>
+                    <button onclick="sendQuickQuery('Terangkan tentang model Pen-Advisors')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Pen-Advisors (BM)</button>
+                    <button onclick="sendQuickQuery('Can you cook maggi mee?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Test Scope Rule</button>
                 </div>
 
-                <!-- Input Field -->
                 <div class="p-3 bg-[#171e2b] border-t border-slate-800 flex gap-2">
-                    <input type="text" id="chat-input" onkeypress="handleChatKey(event)" placeholder="Tanya tentang tadbir urus projek PNM..." class="flex-1 bg-[#0f141c] border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500">
+                    <input type="text" id="chat-input" onkeypress="handleChatKey(event)" placeholder="Ask Ali anything about this PNM project..." class="flex-1 bg-[#0f141c] border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500">
                     <button onclick="processUserChat()" class="bg-cyan-600 hover:bg-cyan-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer">Hantar</button>
                 </div>
             </div>
 
         </section>
 
-        <!-- BOTTOM RADAR COMPLIANCE ROW -->
         <section class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm max-w-2xl">
             <h2 class="text-sm font-bold text-white uppercase tracking-wider mb-2">IFLA Global Compliance Radar</h2>
             <div class="h-44 relative w-full flex justify-center">
@@ -135,7 +122,6 @@
 
     </main>
 
-    <!-- Core Script File Connection -->
     <script src="./script.js"></script>
 </body>
 </html>
