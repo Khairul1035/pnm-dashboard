@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PNM Integrated Digital Command Center</title>
-    <!-- Tailwind CSS & Chart.js for High-End Dashboard Visuals -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body class="bg-[#0b0f19] text-slate-100 font-sans antialiased min-h-screen">
 
-    <!-- TOP EXECUTIVE INTELLIGENCE BANNER -->
     <div class="bg-slate-900 border-b border-slate-800 px-6 py-4 flex flex-col xl:flex-row items-start xl:items-center justify-between sticky top-0 z-50 gap-4">
         <div class="flex items-center gap-3">
             <div class="bg-emerald-500/10 p-2 rounded-lg border border-emerald-500/20">
@@ -22,7 +21,6 @@
             </div>
         </div>
         
-        <!-- GLOBAL RECRUITER MONITOR - LIVE INTERNET TRACE -->
         <div class="flex flex-wrap items-center gap-3 bg-slate-950 px-4 py-2 rounded-xl border border-slate-800 text-xs text-slate-400">
             <div class="flex items-center gap-2 border-r border-slate-800 pr-3">
                 <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
@@ -34,7 +32,6 @@
             </div>
         </div>
 
-        <!-- AUTHOR CREDIT & REAL-TIME MONITOR -->
         <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto justify-start xl:justify-end">
             <div class="bg-gradient-to-r from-cyan-950 to-slate-950 px-4 py-2 rounded-xl border border-cyan-800/40 text-left">
                 <p class="text-[9px] text-cyan-400 uppercase tracking-wider font-bold">Architect & Developer</p>
@@ -46,47 +43,35 @@
                     <span id="status-icon" class="h-3 w-3 rounded-full bg-emerald-500"></span>
                 </span>
                 <p id="system-status" class="text-xs text-slate-400">
-                    <span class="text-emerald-400 font-bold">● SYSTEM NOMINAL:</span> AI-Cataloger operating at peak efficiency.
+                    <span class="text-emerald-400 font-bold">● SYSTEM NOMINAL:</span> AI-Cataloger active.
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- MAIN DASHBOARD CONTENT GRID -->
     <div class="max-w-[1600px] mx-auto p-6 grid grid-cols-1 xl:grid-cols-4 gap-6">
         
-        <!-- COLUMN 1, 2 & 3: LIVE METRICS & HISTORICAL TRENDS -->
         <div class="xl:col-span-3 space-y-6">
-            
-            <!-- LIVE COUNTER CARD GRID -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl">
                     <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">u-Pustaka Live Access</p>
                     <h3 id="kpi-digital" class="text-3xl font-extrabold text-cyan-400 tracking-tight mt-2">8,731,045</h3>
                     <p class="text-xs text-slate-500 mt-2 flex items-center gap-1">
-                        <span class="text-emerald-400 font-medium">● Real-time data stream active</span>
+                        <span class="text-emerald-400 font-medium">● Live data stream</span>
                     </p>
                 </div>
-                <!-- Card 2 -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl">
-                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">AI-Cataloger Indexed (Today)</p>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">AI-Cataloger Indexed</p>
                     <h3 id="live-catalog" class="text-3xl font-extrabold text-emerald-400 tracking-tight mt-2">4,812</h3>
-                    <p class="text-xs text-slate-500 mt-2 flex items-center gap-1">
-                        <span class="text-slate-400">99.2% Accuracy standard</span>
-                    </p>
+                    <p class="text-xs text-slate-500 mt-2">99.2% Accuracy standard</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl">
-                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">MyAksara National Thesis Pool</p>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">MyAksara National Pool</p>
                     <h3 class="text-3xl font-extrabold text-amber-400 tracking-tight mt-2">142,904</h3>
-                    <p class="text-xs text-slate-500 mt-2 flex items-center gap-1">
-                        <span class="text-slate-400 font-medium">International Indexed Ready</span>
-                    </p>
+                    <p class="text-xs text-slate-500 mt-2">International Indexed Ready</p>
                 </div>
             </div>
 
-            <!-- CORE CHART VISUALIZATION -->
             <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl shadow-xl">
                 <div class="flex items-center justify-between mb-6">
                     <div>
@@ -100,39 +85,34 @@
                 </div>
             </div>
 
-            <!-- WORLDWIDE CONSULTING ALIGNMENT FRAMEWORK (NOW INTERACTIVE CONTROLLERS) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-800 pt-6">
-                <!-- Pillar 1 Controller -->
                 <div id="btn-pillar1" onclick="switchFrameworkView(1)" class="p-5 bg-slate-900/40 rounded-xl border border-slate-800/80 cursor-pointer transition-all duration-300 hover:bg-slate-900 hover:border-cyan-500 group">
                     <div class="flex justify-between items-start">
                         <span class="text-[10px] text-cyan-400 uppercase font-bold tracking-wider">Pillar I: Governance</span>
-                        <span id="dot-pillar1" class="w-2 h-2 rounded-full bg-slate-700 transition-colors"></span>
+                        <span id="dot-pillar1" class="w-2 h-2 rounded-full bg-slate-700"></span>
                     </div>
-                    <p class="text-xs text-slate-300 font-semibold mt-1 group-hover:text-cyan-400 transition-colors">Institutional Audit Standard</p>
-                    <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">Cross-referencing legal framework deposits with machine-readable automated indexing models.</p>
+                    <p class="text-xs text-slate-300 font-semibold mt-1 group-hover:text-cyan-400">Institutional Audit Standard</p>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">Cross-referencing legal framework deposits with automated indexing models.</p>
                 </div>
-                <!-- Pillar 2 Controller -->
                 <div id="btn-pillar2" onclick="switchFrameworkView(2)" class="p-5 bg-slate-900/40 rounded-xl border border-slate-800/80 cursor-pointer transition-all duration-300 hover:bg-slate-900 hover:border-emerald-500 group">
                     <div class="flex justify-between items-start">
                         <span class="text-[10px] text-emerald-400 uppercase font-bold tracking-wider">Pillar II: Infrastructure</span>
-                        <span id="dot-pillar2" class="w-2 h-2 rounded-full bg-slate-700 transition-colors"></span>
+                        <span id="dot-pillar2" class="w-2 h-2 rounded-full bg-slate-700"></span>
                     </div>
-                    <p class="text-xs text-slate-300 font-semibold mt-1 group-hover:text-emerald-400 transition-colors">Algorithmic Pen-Advisors</p>
-                    <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">Deploying autonomous classification vectors to scale multi-disciplinary indexing pipelines seamlessly.</p>
+                    <p class="text-xs text-slate-300 font-semibold mt-1 group-hover:text-emerald-400">Algorithmic Pen-Advisors</p>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">Deploying autonomous classification vectors to scale multi-disciplinary indexing pipelines.</p>
                 </div>
-                <!-- Pillar 3 Controller -->
                 <div id="btn-pillar3" onclick="switchFrameworkView(3)" class="p-5 bg-slate-900/30 rounded-xl border border-slate-500/30 cursor-pointer transition-all duration-300 hover:bg-slate-900 group">
                     <div class="flex justify-between items-start">
                         <span class="text-[10px] text-amber-400 uppercase font-bold tracking-wider">Pillar III: Socio-Economic</span>
-                        <span id="dot-pillar3" class="w-2 h-2 rounded-full bg-amber-400 transition-colors"></span>
+                        <span id="dot-pillar3" class="w-2 h-2 rounded-full bg-amber-400"></span>
                     </div>
-                    <p class="text-xs text-slate-200 font-semibold mt-1 group-hover:text-amber-400 transition-colors">Knowledge Democratization</p>
-                    <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">Maximizing nationwide remote inclusion while tracking data distribution trends across local sectors.</p>
+                    <p class="text-xs text-slate-200 font-semibold mt-1 group-hover:text-amber-400">Knowledge Democratization</p>
+                    <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">Maximizing nationwide remote inclusion while tracking data distribution trends.</p>
                 </div>
             </div>
         </div>
 
-        <!-- COLUMN 4: EXECUTIVE RADAR & STRATEGIC GOVERNANCE -->
         <div class="space-y-6">
             <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col justify-between h-full min-h-[460px]">
                 <div>
@@ -145,7 +125,7 @@
                 <div class="border-t border-slate-800 pt-4 mt-2">
                     <div class="bg-slate-950/50 p-3 rounded-xl border border-slate-800/60 flex items-start gap-3">
                         <p class="text-[11px] text-slate-400 leading-relaxed">
-                            <strong class="text-slate-200">Predictive Model:</strong> Based on current velocity, Malaysia is on track to hit 100% compliance with international metadata standards by Q3 2028.
+                            <strong class="text-slate-200">Predictive Model:</strong> Target 100% compliance with international standards by Q3 2028.
                         </p>
                     </div>
                 </div>
@@ -154,157 +134,6 @@
 
     </div>
 
-    <!-- INTERNAL CONTROL ENGINE -->
-    <script>
-        let mainChart;
-        let accessCount = 8731045;
-        let bookCount = 4812;
-
-        // DATASETS FOR DYNAMIC PILLAR INTERACTION
-        const pillarData = {
-            1: {
-                title: "Pillar I: Institutional Audit & Legal Governance",
-                subtitle: "Weekly verification rate of statutory deposits and machine-readable metadata legal compliance",
-                label1: "Compliant Frameworks (%)",
-                data1: [72, 75, 78, 80, 83, 85, 88, 89, 91, 93, 94, 96],
-                label2: "Pending Review",
-                data2: [28, 25, 22, 20, 17, 15, 12, 11, 9, 7, 6, 4],
-                color1: '#22d3ee', color2: 'rgba(239, 68, 68, 0.4)'
-            },
-            2: {
-                title: "Pillar II: Algorithmic Infrastructure Performance",
-                subtitle: "Processing volume and text-classification vector efficiency of deployed Pen-Advisors Models",
-                label1: "AI Vectoring Rate (k/s)",
-                data1: [3.1, 3.5, 4.0, 4.2, 5.0, 5.8, 6.2, 6.9, 7.5, 8.1, 8.8, 9.4],
-                label2: "Manual Audit Backlog",
-                data2: [5.2, 4.8, 4.5, 4.1, 3.8, 3.2, 2.9, 2.5, 2.0, 1.4, 0.9, 0.4],
-                color1: '#10b981', color2: 'rgba(148, 163, 184, 0.4)'
-            },
-            3: {
-                title: "Pillar III: Socio-Economic Macro Distribution",
-                subtitle: "Comparing nationwide digital utilization against physical library visits",
-                label1: "Digital Access (M)",
-                data1: [4.2, 4.8, 5.1, 5.8, 6.2, 6.9, 7.1, 7.5, 7.9, 8.2, 8.5, 8.7],
-                label2: "Physical Visitors",
-                data2: [1.5, 1.7, 1.6, 1.9, 2.1, 2.3, 2.2, 2.4, 2.3, 2.5, 2.4, 2.4],
-                color1: '#22d3ee', color2: 'rgba(16, 185, 129, 0.6)'
-            }
-        };
-
-        window.addEventListener('DOMContentLoaded', () => {
-            // A. DYNAMIC CLOCK ENGINE
-            function updateClock() {
-                const now = new Date();
-                const timeString = now.toLocaleDateString('en-GB', {
-                    day: '2-digit', month: 'short', year: 'numeric'
-                }) + ' | ' + now.toLocaleTimeString('en-GB', { hour12: false });
-                document.getElementById('live-timestamp').innerText = timeString;
-            }
-            setInterval(updateClock, 1000);
-            updateClock();
-
-            // B. LIVE RECRUITER GEOLOCATION FETCH ENGINE (API TRACE)
-            fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    if(data.country_name) {
-                        document.getElementById('recruiter-node').innerText = `RECRUITER NODE: ${data.country_name.toUpperCase()} HUB`;
-                    } else {
-                        document.getElementById('recruiter-node').innerText = "RECRUITER NODE: SECURE REGIONAL TERMINAL";
-                    }
-                })
-                .catch(() => {
-                    document.getElementById('recruiter-node').innerText = "RECRUITER NODE: GLOBAL HQ TERMINAL";
-                });
-
-            // C. INITIALIZE MAIN TREND CHART (Default: Pillar 3)
-            const ctxLine = document.getElementById('monthlyTrendChart').getContext('2d');
-            mainChart = new Chart(ctxLine, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    datasets: [
-                        { label: pillarData[3].label1, data: pillarData[3].data1, borderColor: pillarData[3].color1, backgroundColor: 'rgba(34, 211, 238, 0.1)', fill: true, tension: 0.3 },
-                        { label: pillarData[3].label2, data: pillarData[3].data2, type: 'bar', backgroundColor: pillarData[3].color2 }
-                    ]
-                },
-                options: { responsive: true, maintainAspectRatio: false }
-            });
-
-            // D. RADAR COMPLIANCE ANALYTICS
-            const ctxRadar = document.getElementById('executiveRadarChart');
-            if (ctxRadar) {
-                new Chart(ctxRadar.getContext('2d'), {
-                    type: 'radar',
-                    data: {
-                        labels: ['Collection Depth', 'AI Infrastructure', 'Public CSAT', 'Community Impact', 'Cataloging Efficiency', 'Inclusive Access'],
-                        datasets: [
-                            { label: 'Performance', data: [88, 95, 92, 85, 99, 90], backgroundColor: 'rgba(16, 185, 129, 0.2)', borderColor: '#10b981' },
-                            { label: 'IFLA Benchmark', data: [85, 80, 85, 80, 90, 85], borderColor: 'rgba(34, 211, 238, 0.5)', borderDash: [5, 5] }
-                        ]
-                    },
-                    options: { responsive: true, maintainAspectRatio: false }
-                });
-            }
-
-            // E. METRIC SIMULATION ENGINE
-            setInterval(() => {
-                accessCount += Math.floor(Math.random() * 5) + 1;
-                if (Math.random() > 0.8) { bookCount += 1; }
-                const digEl = document.getElementById('kpi-digital');
-                const bEl = document.getElementById('live-catalog');
-                if (digEl) digEl.innerText = accessCount.toLocaleString('en-US');
-                if (bEl) bEl.innerText = bookCount.toLocaleString('en-US');
-            }, 2000);
-        });
-
-        // F. INTERACTIVE FRAMEWORK VIEW CONTROLLER
-        function switchFrameworkView(pillarId) {
-            const config = pillarData[pillarId];
-            
-            // Update Headers
-            document.getElementById('chart-main-title').innerText = config.title;
-            document.getElementById('chart-sub-title').innerText = config.subtitle;
-            
-            // Update Chart Datasets
-            mainChart.data.datasets[0].label = config.label1;
-            mainChart.data.datasets[0].data = config.data1;
-            mainChart.data.datasets[0].borderColor = config.color1;
-            
-            mainChart.data.datasets[1].label = config.label2;
-            mainChart.data.datasets[1].data = config.data2;
-            mainChart.data.datasets[1].backgroundColor = config.color2;
-            
-            // Toggle types tailored to specific metric layouts
-            if (pillarId === 1) {
-                mainChart.data.datasets[0].type = 'line';
-                mainChart.data.datasets[1].type = 'line';
-            } else if (pillarId === 2) {
-                mainChart.data.datasets[0].type = 'bar';
-                mainChart.data.datasets[1].type = 'line';
-            } else {
-                mainChart.data.datasets[0].type = 'line';
-                mainChart.data.datasets[1].type = 'bar';
-            }
-            
-            mainChart.update();
-
-            // Reset UI States
-            for (let i = 1; i <= 3; i++) {
-                const btn = document.getElementById(`btn-pillar${i}`);
-                const dot = document.getElementById(`dot-pillar${i}`);
-                
-                if (i === pillarId) {
-                    dot.className = `w-2 h-2 rounded-full ${i===1?'bg-cyan-400':i===2?'bg-emerald-400':'bg-amber-400'}`;
-                    btn.className = `p-5 bg-slate-900 rounded-xl border ${i===1?'border-cyan-500/50':i===2?'border-emerald-500/50':'border-amber-500/50'} cursor-pointer shadow-lg shadow-black/40`;
-                    btn.querySelector('p').className = `text-xs font-bold mt-1 ${i===1?'text-cyan-400':i===2?'text-emerald-400':'text-amber-400'}`;
-                } else {
-                    dot.className = "w-2 h-2 rounded-full bg-slate-700";
-                    btn.className = "p-5 bg-slate-900/40 rounded-xl border border-slate-800/80 cursor-pointer transition-all duration-300 hover:bg-slate-900";
-                    btn.querySelector('p').className = "text-xs text-slate-300 font-semibold mt-1";
-                }
-            }
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
