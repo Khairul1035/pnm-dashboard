@@ -2,48 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PNM Governance Terminal</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>PNM Governance Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-[#0f141c] text-slate-200 font-sans antialiased min-h-screen">
-    <header class="border-b border-slate-800 bg-[#131924] px-8 py-4 sticky top-0 z-50">
-        <div class="max-w-[1500px] mx-auto flex items-center justify-between">
-            <div>
-                <h1 class="text-sm font-bold text-white uppercase">Perpustakaan Negara Malaysia</h1>
-                <p class="text-xs text-slate-400">Institutional Governance & Analytics</p>
+<body class="bg-gray-900 text-white p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-2xl font-bold mb-2">PNM Governance Dashboard</h1>
+        <p class="text-gray-400 mb-6">Designed by Mohd Khairul Ridhuan bin Mohd Fadzil</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-6 rounded-xl">
+                <canvas id="myChart" class="h-64"></canvas>
             </div>
-            <div class="text-right">
-                <p class="text-[10px] text-slate-500 uppercase">Architect</p>
-                <p class="text-xs font-medium text-slate-300">Mohd Khairul Ridhuan bin Mohd Fadzil</p>
+            <div class="bg-gray-800 p-6 rounded-xl">
+                <h2 class="text-lg font-bold mb-4">Ali Co-Researcher</h2>
+                <div id="chat-box" class="h-48 overflow-y-auto bg-gray-900 p-4 rounded mb-4 text-sm">
+                    <p class="text-blue-400">Ali: Hello! I am Ali. Ask me anything.</p>
+                </div>
+                <input id="chat-input" type="text" class="w-full p-2 bg-gray-700 rounded mb-2" placeholder="Ask Ali...">
+                <button onclick="askAli()" class="w-full bg-blue-600 py-2 rounded font-bold">Send</button>
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-[1500px] mx-auto p-6 space-y-6">
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 bg-[#131924] p-6 rounded-xl border border-slate-800">
-                <h2 id="chart-main-title" class="text-sm font-bold text-white uppercase">Integrated Macro Distribution</h2>
-                <div class="h-64 mt-4"><canvas id="monthlyTrendChart"></canvas></div>
-            </div>
+    <script>
+        // Chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: { labels: ['Jan', 'Feb', 'Mar'], datasets: [{ label: 'Performance', data: [10, 50, 80], borderColor: '#3b82f6' }] }
+        });
+
+        // Ali AI Logic
+        function askAli() {
+            const input = document.getElementById('chat-input');
+            const box = document.getElementById('chat-box');
+            const q = input.value.toLowerCase();
             
-            <!-- ALI CO-RESEARCHER TERMINAL -->
-            <div class="bg-[#131924] border border-slate-800 rounded-xl flex flex-col h-[400px]">
-                <div class="p-3 border-b border-slate-800 bg-[#171e2b] flex items-center gap-2">
-                    <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                    <span class="text-xs font-bold text-white uppercase">Ali Co-Researcher</span>
-                </div>
-                <div id="chat-screen" class="flex-1 p-3 overflow-y-auto space-y-2 text-xs">
-                    <div class="bg-slate-800 p-2 rounded text-slate-300"><strong>Ali:</strong> Hello! I am Ali, your research assistant. Ask me anything about this project in Malay or English.</div>
-                </div>
-                <div class="p-2 border-t border-slate-800 flex gap-2">
-                    <input type="text" id="chat-input" onkeypress="if(event.key==='Enter') processUserChat()" class="flex-1 bg-[#0f141c] border border-slate-800 rounded px-2 py-1 text-xs text-white" placeholder="Ask Ali...">
-                    <button onclick="processUserChat()" class="bg-cyan-600 px-3 py-1 rounded text-xs font-bold text-white">Send</button>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="./script.js"></script>
+            box.innerHTML += `<p class="mt-2">You: ${input.value}</p>`;
+            
+            let response = "I am Ali. I only discuss this PNM Project.";
+            if (q.includes('designer') || q.includes('khairul')) {
+                response = "The designer is Mohd Khairul Ridhuan bin Mohd Fadzil.";
+            } else if (q.includes('stat')) {
+                response = "Performance is rising, reaching 80% currently.";
+            } else if (q.includes('masak') || q.includes('cook')) {
+                response = "I cannot help with that. Out of scope.";
+            }
+            
+            box.innerHTML += `<p class="text-blue-400 mt-2">Ali: ${response}</p>`;
+            input.value = '';
+            box.scrollTop = box.scrollHeight;
+        }
+    </script>
 </body>
 </html>
