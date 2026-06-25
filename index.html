@@ -3,125 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PNM Governance Dashboard</title>
+    <title>PNM Governance Terminal</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-[#0f141c] text-slate-200 font-sans antialiased min-h-screen">
-
     <header class="border-b border-slate-800 bg-[#131924] px-8 py-4 sticky top-0 z-50">
-        <div class="max-w-[1500px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <div class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></div>
-                <div>
-                    <h1 class="text-sm font-bold tracking-tight text-white uppercase">Perpustakaan Negara Malaysia</h1>
-                    <p class="text-xs text-slate-400">Institutional Governance & Analytics Terminal</p>
-                </div>
+        <div class="max-w-[1500px] mx-auto flex items-center justify-between">
+            <div>
+                <h1 class="text-sm font-bold text-white uppercase">Perpustakaan Negara Malaysia</h1>
+                <p class="text-xs text-slate-400">Institutional Governance & Analytics</p>
             </div>
-            <div class="flex flex-wrap items-center gap-6 text-xs text-slate-400">
-                <div class="border-l sm:border-l-0 sm:border-r border-slate-800 pl-3 sm:pl-0 sm:pr-6">
-                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Developer & Architect</p>
-                    <p class="font-medium text-slate-300">Mohd Khairul Ridhuan bin Mohd Fadzil</p>
-                </div>
-                <div>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">System Timestamp</p>
-                    <p id="live-timestamp" class="font-mono text-cyan-400 font-medium">Synchronizing...</p>
-                </div>
+            <div class="text-right">
+                <p class="text-[10px] text-slate-500 uppercase">Architect</p>
+                <p class="text-xs font-medium text-slate-300">Mohd Khairul Ridhuan bin Mohd Fadzil</p>
             </div>
         </div>
     </header>
 
-    <main class="max-w-[1500px] mx-auto p-6 lg:p-8 space-y-8">
-
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm">
-                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">u-Pustaka Live Access</p>
-                <h3 id="kpi-digital" class="text-2xl font-bold text-white tracking-tight mt-1">8,731,045</h3>
-                <p class="text-[11px] text-emerald-400 mt-1">● Real-time stream active</p>
+    <main class="max-w-[1500px] mx-auto p-6 space-y-6">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-[#131924] p-6 rounded-xl border border-slate-800">
+                <h2 id="chart-main-title" class="text-sm font-bold text-white uppercase">Integrated Macro Distribution</h2>
+                <div class="h-64 mt-4"><canvas id="monthlyTrendChart"></canvas></div>
             </div>
-            <div class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm">
-                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">AI-Cataloger Indexed</p>
-                <h3 id="live-catalog" class="text-2xl font-bold text-white tracking-tight mt-1">4,812</h3>
-                <p class="text-[11px] text-slate-500 mt-1">99.2% Accuracy standard</p>
-            </div>
-            <div class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm">
-                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">MyAksara National Pool</p>
-                <h3 class="text-2xl font-bold text-white tracking-tight mt-1">142,904</h3>
-                <p class="text-[11px] text-slate-500 mt-1">International Index Ready</p>
-            </div>
-        </section>
-
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            <div class="lg:col-span-2 space-y-6">
-                <div class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm h-[380px] flex flex-col justify-between">
-                    <div class="mb-4">
-                        <h2 id="chart-main-title" class="text-sm font-bold text-white uppercase tracking-wider">Integrated Macro Distribution</h2>
-                        <p id="chart-sub-title" class="text-xs text-slate-400 mt-0.5">Comparing nationwide digital utilization against physical library visits</p>
-                    </div>
-                    <div class="h-64 relative w-full">
-                        <canvas id="monthlyTrendChart"></canvas>
-                    </div>
+            <!-- ALI CO-RESEARCHER TERMINAL -->
+            <div class="bg-[#131924] border border-slate-800 rounded-xl flex flex-col h-[400px]">
+                <div class="p-3 border-b border-slate-800 bg-[#171e2b] flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
+                    <span class="text-xs font-bold text-white uppercase">Ali Co-Researcher</span>
                 </div>
-
-                <div>
-                    <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-3">Strategic Pillars Selection</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <button id="btn-pillar1" onclick="switchFrameworkView(1)" class="w-full text-left p-4 rounded-xl bg-[#131924]/50 border border-slate-800 hover:border-cyan-500/50 hover:bg-[#131924] transition-all cursor-pointer focus:outline-none">
-                            <div class="flex items-center justify-between"><span class="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Pillar I</span><span id="dot-pillar1" class="h-1.5 w-1.5 rounded-full bg-slate-700"></span></div>
-                            <p class="text-xs font-bold text-white mt-1">Governance & Audit</p>
-                        </button>
-                        <button id="btn-pillar2" onclick="switchFrameworkView(2)" class="w-full text-left p-4 rounded-xl bg-[#131924]/50 border border-slate-800 hover:border-emerald-500/50 hover:bg-[#131924] transition-all cursor-pointer focus:outline-none">
-                            <div class="flex items-center justify-between"><span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Pillar II</span><span id="dot-pillar2" class="h-1.5 w-1.5 rounded-full bg-slate-700"></span></div>
-                            <p class="text-xs font-bold text-white mt-1">AI Infrastructure</p>
-                        </button>
-                        <button id="btn-pillar3" onclick="switchFrameworkView(3)" class="w-full text-left p-4 rounded-xl bg-[#131924] border border-cyan-500/40 shadow-sm focus:outline-none">
-                            <div class="flex items-center justify-between"><span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Pillar III</span><span id="dot-pillar3" class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span></div>
-                            <p class="text-xs font-bold text-cyan-400 mt-1">Knowledge Democratization</p>
-                        </button>
-                    </div>
+                <div id="chat-screen" class="flex-1 p-3 overflow-y-auto space-y-2 text-xs">
+                    <div class="bg-slate-800 p-2 rounded text-slate-300"><strong>Ali:</strong> Hello! I am Ali, your research assistant. Ask me anything about this project in Malay or English.</div>
                 </div>
-            </div>
-
-            <div class="bg-[#131924] border border-slate-800/80 rounded-xl shadow-xl flex flex-col h-[485px] overflow-hidden">
-                <div class="p-4 border-b border-slate-800 bg-[#171e2b] flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
-                        <span class="text-xs font-bold tracking-wider text-white uppercase">Ali Co-Researcher Terminal</span>
-                    </div>
-                    <span class="text-[9px] text-slate-500 font-mono">Ali-Node v1.2</span>
+                <div class="p-2 border-t border-slate-800 flex gap-2">
+                    <input type="text" id="chat-input" onkeypress="if(event.key==='Enter') processUserChat()" class="flex-1 bg-[#0f141c] border border-slate-800 rounded px-2 py-1 text-xs text-white" placeholder="Ask Ali...">
+                    <button onclick="processUserChat()" class="bg-cyan-600 px-3 py-1 rounded text-xs font-bold text-white">Send</button>
                 </div>
-                
-                <div id="chat-screen" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs scrollbar-thin scrollbar-thumb-slate-800">
-                    <div class="bg-slate-800/40 border border-slate-800 p-2.5 rounded-lg text-slate-300 leading-relaxed">
-                        <strong class="text-cyan-400">Ali:</strong> Salam & Hello! I am <strong>Ali</strong>, your dedicated AI Co-Researcher for this project. I monitor real-time library analytics and institutional governance data. You can chat with me in <strong>Malay</strong> or <strong>English</strong>!
-                    </div>
-                </div>
-
-                <div class="p-2 bg-[#0f141c]/50 border-t border-slate-800/60 flex gap-1.5 overflow-x-auto text-[10px]">
-                    <button onclick="sendQuickQuery('Siapa designer projek ni?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Designer Profile</button>
-                    <button onclick="sendQuickQuery('Give me real-time statistics')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Real-Time Stats (EN)</button>
-                    <button onclick="sendQuickQuery('Terangkan tentang model Pen-Advisors')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Pen-Advisors (BM)</button>
-                    <button onclick="sendQuickQuery('Can you cook maggi mee?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded cursor-pointer whitespace-nowrap">Test Scope Rule</button>
-                </div>
-
-                <div class="p-3 bg-[#171e2b] border-t border-slate-800 flex gap-2">
-                    <input type="text" id="chat-input" onkeypress="handleChatKey(event)" placeholder="Ask Ali anything about this PNM project..." class="flex-1 bg-[#0f141c] border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500">
-                    <button onclick="processUserChat()" class="bg-cyan-600 hover:bg-cyan-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer">Hantar</button>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="bg-[#131924] p-6 rounded-xl border border-slate-800/60 shadow-sm max-w-2xl">
-            <h2 class="text-sm font-bold text-white uppercase tracking-wider mb-2">IFLA Global Compliance Radar</h2>
-            <div class="h-44 relative w-full flex justify-center">
-                <canvas id="executiveRadarChart"></canvas>
             </div>
         </section>
-
     </main>
-
     <script src="./script.js"></script>
 </body>
 </html>
