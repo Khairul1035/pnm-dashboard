@@ -2,56 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PNM Governance Dashboard</title>
+    <!-- Guna CDN versi terkini -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-900 text-white p-8">
+<body class="bg-gray-950 text-gray-200 p-8">
     <div class="max-w-6xl mx-auto">
-        <h1 class="text-2xl font-bold mb-2">PNM Governance Dashboard</h1>
-        <p class="text-gray-400 mb-6">Designed by Mohd Khairul Ridhuan bin Mohd Fadzil</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-800 p-6 rounded-xl">
-                <canvas id="myChart" class="h-64"></canvas>
+        <header class="flex justify-between items-center mb-8 border-b border-gray-800 pb-4">
+            <div>
+                <h1 class="text-xl font-bold uppercase text-white">Perpustakaan Negara Malaysia</h1>
+                <p class="text-sm text-gray-400">Institutional Governance & Analytics</p>
             </div>
-            <div class="bg-gray-800 p-6 rounded-xl">
-                <h2 class="text-lg font-bold mb-4">Ali Co-Researcher</h2>
-                <div id="chat-box" class="h-48 overflow-y-auto bg-gray-900 p-4 rounded mb-4 text-sm">
-                    <p class="text-blue-400">Ali: Hello! I am Ali. Ask me anything.</p>
+            <div class="text-right">
+                <p class="text-[10px] text-gray-500 uppercase">Architect</p>
+                <p class="text-sm font-semibold">Mohd Khairul Ridhuan bin Mohd Fadzil</p>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Graph Section -->
+            <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+                <h2 class="text-sm font-bold uppercase text-gray-400 mb-4">Integrated Macro Distribution</h2>
+                <div class="h-64">
+                    <canvas id="myChart"></canvas>
                 </div>
-                <input id="chat-input" type="text" class="w-full p-2 bg-gray-700 rounded mb-2" placeholder="Ask Ali...">
-                <button onclick="askAli()" class="w-full bg-blue-600 py-2 rounded font-bold">Send</button>
+            </div>
+
+            <!-- Ali Chat Section -->
+            <div class="bg-gray-900 rounded-xl border border-gray-800 flex flex-col h-[350px]">
+                <div class="p-4 border-b border-gray-800 font-bold text-sm">ALI CO-RESEARCHER</div>
+                <div id="chat-box" class="flex-1 p-4 overflow-y-auto text-sm space-y-3">
+                    <p class="text-gray-400">Ali: Hello! I am Ali, your research assistant. Ask me about the project.</p>
+                </div>
+                <div class="p-4 border-t border-gray-800 flex gap-2">
+                    <input id="chat-input" type="text" class="flex-1 bg-gray-950 border border-gray-700 rounded px-3 py-2 text-sm" placeholder="Ask Ali...">
+                    <button onclick="askAli()" class="bg-blue-600 px-4 py-2 rounded text-sm font-bold">Send</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Chart
+        // 1. Chart Init
         const ctx = document.getElementById('myChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
-            data: { labels: ['Jan', 'Feb', 'Mar'], datasets: [{ label: 'Performance', data: [10, 50, 80], borderColor: '#3b82f6' }] }
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{ label: 'Analytics', data: [12, 19, 3, 5, 2, 30], borderColor: '#3b82f6', fill: true }]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // Ali AI Logic
+        // 2. Ali Logic
         function askAli() {
             const input = document.getElementById('chat-input');
             const box = document.getElementById('chat-box');
-            const q = input.value.toLowerCase();
+            if(!input.value) return;
+
+            box.innerHTML += `<p>You: ${input.value}</p>`;
+            let q = input.value.toLowerCase();
+            let res = "I am Ali. I only discuss this PNM Project.";
             
-            box.innerHTML += `<p class="mt-2">You: ${input.value}</p>`;
-            
-            let response = "I am Ali. I only discuss this PNM Project.";
             if (q.includes('designer') || q.includes('khairul')) {
-                response = "The designer is Mohd Khairul Ridhuan bin Mohd Fadzil.";
+                res = "The designer is Mohd Khairul Ridhuan bin Mohd Fadzil.";
             } else if (q.includes('stat')) {
-                response = "Performance is rising, reaching 80% currently.";
-            } else if (q.includes('masak') || q.includes('cook')) {
-                response = "I cannot help with that. Out of scope.";
+                res = "Analytics showing steady growth in June.";
             }
             
-            box.innerHTML += `<p class="text-blue-400 mt-2">Ali: ${response}</p>`;
+            box.innerHTML += `<p class="text-blue-400">Ali: ${res}</p>`;
             input.value = '';
             box.scrollTop = box.scrollHeight;
         }
